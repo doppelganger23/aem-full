@@ -54,12 +54,9 @@ public class EventServlet extends SlingAllMethodsServlet {
     private static final String EVENTS_PARENT_NODE_SUBPATH_PROPERTY_NAME = "parent.node.subpath";
     private String eventsParentNodeSubpath;
 
-    //working on this
     @Reference
     private ResourceResolverFactory factory;
     private static final String SERVICE_ACCOUNT_IDENTIFIER = "my-system-user";
-
-    ////METHODS////
 
     @Activate
     protected void activate(final Map<String, Object> config) {
@@ -71,12 +68,8 @@ public class EventServlet extends SlingAllMethodsServlet {
     @Override
     protected void doGet(final SlingHttpServletRequest request, final SlingHttpServletResponse response) throws IOException {
 
-        //////TODO: change following 2 lines to use Service Resource Resolver ("my-system-user" with no password)
-        //final Resource resource = request.getResourceResolver().getResource(adminPagePath + JcrConstants.JCR_CONTENT + eventsParentNodeSubpath);
-        //Node eventsParentNode = resource.adaptTo(Node.class);
-        /////////
-        Node eventsParentNode = this.getIt();
-        //////////////
+        final Resource resource = request.getResourceResolver().getResource(adminPagePath + JcrConstants.JCR_CONTENT + eventsParentNodeSubpath);
+        Node eventsParentNode = resource.adaptTo(Node.class);
 
         String jsonEventsString = null;
         List<EventModel> eventModels = null;
@@ -87,80 +80,6 @@ public class EventServlet extends SlingAllMethodsServlet {
             logger.error(Arrays.toString(e.getStackTrace()));
         }
         response.getWriter().write(jsonEventsString);
-    }
-
-    //working on it
-    //TODO: fix errors and use abowe
-    private Node getIt(){
-        Map<String, Object> param = new HashMap<String, Object>();
-        ResourceResolver resourceResolver = null;
-        Resource resource = null;
-        Node node = null;
-        param.put(ResourceResolverFactory.SUBSERVICE,"testService");
-        try {
-            //resourceResolver = factory.getServiceResourceResolver(param);
-            resourceResolver = factory.getAdministrativeResourceResolver(param);//works with that line
-
-            resource = resourceResolver.getResource(adminPagePath + JcrConstants.JCR_CONTENT + eventsParentNodeSubpath);
-            node = resource.adaptTo(Node.class);
-        }catch (Exception e){
-            logger.error(e.getMessage());
-        }
-        return node;
-    }
-
-    //working on it
-    //TODO: fix errors and use abowe
-    private Node getEventsNode() {
-        ResourceResolver serviceResolver = null;
-        Node node = null;
-        try {
-            Map<String, Object> authInfo = new HashMap<String, Object>();
-            authInfo.put(ResourceResolverFactory.USER,"my-system-user");
-            serviceResolver = factory.getServiceResourceResolver(authInfo);
-
-            if(serviceResolver != null) {
-                // Do some work w your service resource resolver
-                Resource resource = serviceResolver.getResource(adminPagePath + JcrConstants.JCR_CONTENT + eventsParentNodeSubpath);
-                node = resource.adaptTo(Node.class);
-            } else {
-                logger.error("Could not obtain a CRX User for the Service: " + SERVICE_ACCOUNT_IDENTIFIER);
-            }
-        } catch (LoginException e){
-            logger.error(e.getMessage());
-        }
-        return node;
-    }
-
-    //working on it
-    //TODO: fix errors and use abowe
-    private Node getNode(){
-        Resource res = null;
-        Map<String, Object> param = new HashMap<String, Object>();
-        param.put(ResourceResolverFactory.SUBSERVICE, "readService");
-        ResourceResolver resolver = null;
-        try {
-            resolver = factory.getServiceResourceResolver(param);
-            logger.info(resolver.getUserID());
-            res = resolver.getResource(adminPagePath + JcrConstants.JCR_CONTENT + eventsParentNodeSubpath);
-            ValueMap readMap = res.getValueMap();
-            logger.info(readMap.get("jcr:primaryType", ""));
-            ModifiableValueMap modMap = res.adaptTo(ModifiableValueMap.class);
-            if(modMap != null){
-                modMap.put("my-system-user", "");
-                resolver.commit();
-                logger.info("Successfully saved");
-            }
-        } catch (LoginException e) {
-            logger.error("LoginException",e);
-        } catch (PersistenceException e) {
-            logger.error("LoginException",e);
-        }finally{
-            if(resolver != null && resolver.isLive()){
-                resolver.close();
-            }
-        }
-        return res.adaptTo(Node.class);
     }
 
     private String convertEventsToJson(List<EventModel> eventModels) throws JSONException {
