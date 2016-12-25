@@ -1,0 +1,44 @@
+<meta data-sly-use.clientlib="/libs/granite/sightly/templates/clientlib.html"
+      data-sly-call="${clientlib.all @categories='sapustraining.eventlayout'}" data-sly-unwrap></meta>
+<sly data-sly-use.layout="com.epam.sapustraining.core.models.event.clientside.EventLayoutModel"/>
+
+<div id="viewSelect" class="navbar">
+    <div class="navbar-inner">
+        <span class="brand">View By:</span>
+        <ul class="nav">
+            <li id="typeButton"><a href="#" onclick="viewScript.viewTypes()">Type</a></li>
+            <li id="topicButton"><a href="#" onclick="viewScript.viewTopics()">Topic</a></li>
+        </ul>
+    </div>
+</div>
+
+<div id="typeLayout">
+    <div class="row event-listing" data-sly-list.column="${layout.columnsByType}">
+        <div class="span3">
+            <h3>${column.columnName}</h3>
+            <ul class="icons" data-sly-list.event="${column.eventModels}">
+                <li>
+                    <i class="icon-${event.type || 'cloud'}"></i>
+                    <span class="date"><span class="m">${event.date @ context="html"}</span></span>
+                    <h4><a href="${event.titleLink}">${event.titleText @ context="html"}</a></h4>
+                    <p>${event.description || 'event' @ context="html"}</p>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<div id="topicLayout">
+    <div class="row event-listing" data-sly-list.column="${layout.columnsByTopic}">
+        <div class="span3">
+            <h3>${column.columnName} <i class="icon-${'cloud'}"></i></h3>
+            <ul class="icons" data-sly-list.event="${column.eventModels}">
+                <li>
+                    <span class="date"><span class="m">${event.date @ context="html"}</span></span>
+                    <h4><a href="${event.titleLink}">${event.titleText @ context="html"}</a></h4>
+                    <p>${event.description || 'event' @ context="html"}</p>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>

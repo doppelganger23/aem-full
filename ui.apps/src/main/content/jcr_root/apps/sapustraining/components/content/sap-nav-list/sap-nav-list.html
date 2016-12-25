@@ -1,0 +1,5 @@
+<sly data-sly-use.model="com.epam.sapustraining.core.models.NavElementsModel"></sly>
+
+<ul class="nav" data-sly-list.navPage="${model.navPages}">
+    <li class="${currentPage.name == navPage.name ? 'active' : ''}"><a href="${navPage.path}.html">${navPage.title}</a></li>
+</ul>

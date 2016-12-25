@@ -1,0 +1,16 @@
+<meta data-sly-use.clientlib="/libs/granite/sightly/templates/clientlib.html"
+      data-sly-call="${clientlib.all @categories='sapustraining.refresheventlayout'}" data-sly-unwrap></meta>
+<sly data-sly-use.layout="com.epam.sapustraining.core.models.event.clientside.EventLayoutModel"/>
+
+<div id="viewSelect" class="navbar" data="${currentNode.path}">
+    <div class="navbar-inner">
+        <span class="brand">View By:</span>
+        <ul class="nav">
+            <li id="typeButton"><a href="#" onclick="refreshScript.view('type')">Type</a></li>
+            <li id="topicButton"><a href="#" onclick="refreshScript.view('topic')">Topic</a></li>
+        </ul>
+    </div>
+</div>
+
+<div id="target">
+</div>

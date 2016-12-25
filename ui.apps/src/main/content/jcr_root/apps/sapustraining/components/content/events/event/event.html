@@ -1,0 +1,4 @@
+<i class="icon-${properties.eventType || 'cloud'}"></i>
+<div class="date">${properties.eventDate @ context="html"}</div>
+<h4><a href="${properties.eventTitleLink}">${properties.eventTitleText @ context="html"}</a></h4>
+<p>${properties.eventDescription || 'event' @ context="html"}</p>

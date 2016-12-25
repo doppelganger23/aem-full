@@ -1,0 +1,10 @@
+<sly data-sly-use.section="com.epam.sapustraining.core.models.LinkSectionModel"></sly>
+
+<h4>${properties.headerText || "add links here" @ context="html"}</h4>
+<ul class="unstyled" data-sly-list.link="${section.links}">
+    <li>
+        <a href="${link.url}">${link.name}</a>
+    </li>
+</ul>
+
+

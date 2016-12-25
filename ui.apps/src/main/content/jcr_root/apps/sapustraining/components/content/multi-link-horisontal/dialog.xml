@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0"
+    jcr:primaryType="cq:Dialog"
+    title="Links"
+    xtype="dialog">
+    <items
+        jcr:primaryType="cq:Widget"
+        xtype="tabpanel">
+        <items jcr:primaryType="cq:WidgetCollection">
+            <tab1
+                jcr:primaryType="cq:Panel"
+                title="Add Link">
+                <items jcr:primaryType="cq:WidgetCollection">
+                    <links
+                        jcr:primaryType="cq:Widget"
+                        fieldLabel="Links"
+                        name="./links"
+                        orderable="{Boolean}true"
+                        title="Links title"
+                        xtype="multifield">
+                        <fieldConfig
+                            jcr:primaryType="cq:Widget"
+                            border="true"
+                            layout="form"
+                            padding="10px"
+                            width="1000"
+                            xtype="multi-field-panel">
+                            <items jcr:primaryType="cq:WidgetCollection">
+                                <url
+                                    jcr:primaryType="cq:Widget"
+                                    fieldLabel="URL"
+                                    key="url"
+                                    xtype="textfield"/>
+                                <description
+                                    jcr:primaryType="cq:Widget"
+                                    fieldLabel="Description"
+                                    key="description"
+                                    xtype="textfield"/>
+                            </items>
+                        </fieldConfig>
+                    </links>
+                </items>
+            </tab1>
+            <header
+                jcr:primaryType="cq:Panel"
+                title="Header">
+                <items jcr:primaryType="cq:WidgetCollection">
+                    <header
+                        jcr:primaryType="cq:Widget"
+                        fieldDescription="Brief description of information "
+                        fieldLabel="Header"
+                        name="./headerText"
+                        xtype="richtext"/>
+                    <is-bold
+                        jcr:primaryType="cq:Widget"
+                        fieldLabel="Links are Bold"
+                        name="./isBold"
+                        type="checkbox"
+                        xtype="selection"/>
+                </items>
+            </header>
+        </items>
+    </items>
+</jcr:root>

@@ -1,0 +1,15 @@
+<sly data-sly-use.section="com.epam.sapustraining.core.models.LinkSectionModel"></sly>
+
+<p data-sly-test="${section.isEmpty}">Add social links here</p>
+<ul class="inline social pull-right" data-sly-list.link="${section.links}">
+    <li class="${link.cssClass}"><a href="${link.url}">${link.name}</a></li>
+</ul>
+
+<!--/*
+	class=
+	"twitter icon"
+	"facebook icon"
+	"linkedin icon"
+	"youtube icon"
+	"googleplus icon"
+*/-->

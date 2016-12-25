@@ -1,0 +1,59 @@
+<meta data-sly-use.clientlib="/libs/granite/sightly/templates/clientlib.html"
+      data-sly-call="${clientlib.all @categories='sapustraining.jsevents'}" data-sly-unwrap></meta>
+<sly data-sly-use.layout="com.epam.sapustraining.core.models.event.clientside.EventLayoutModel"/>
+
+<div id="viewSelect" class="navbar" data="${currentNode.path}">
+    <div class="navbar-inner">
+        <span class="brand">View By:</span>
+        <ul class="nav">
+            <li id="typeButton"><a href="#" onclick="jScript.view('type')">Type</a></li>
+            <li id="topicButton"><a href="#" onclick="jScript.view('topic')">Topic</a></li>
+        </ul>
+    </div>
+</div>
+
+<div id="servlet-url-holder" style="display: none;">
+    ${properties.servletUrl}
+</div>
+
+<div id="target" class="${properties.servletUrl}">
+    <div class="row event-listing" id="column-holder">
+        <div class="span3">
+            <h3 id="firsth3"></h3>
+            <ul class="icons" id="firstcol">
+            </ul>
+        </div>
+        <div class="span3">
+            <h3 id="secondh3"></h3>
+            <ul class="icons" id="secondcol">
+            </ul>
+        </div>
+        <div class="span3">
+            <h3 id="thirdh3"></h3>
+            <ul class="icons" id="thirdcol">
+            </ul>
+        </div>
+        <div class="span3">
+            <h3 id="otherh3">Other:</h3>
+            <ul class="icons" id="other">
+            </ul>
+        </div>
+    </div>
+</div>
+
+<script type="text/html" id="topic-template">
+    <li>
+        <i data-template-bind='{"attribute":"class", "value":"icon"}'></i>
+        <span class="date"><span class="m" data-content="date"></span></span>
+        <h4><a href="#" data-content="titleText"></a></h4>
+        <p data-content="description"></p>
+    </li>
+</script>
+
+<script type="text/html" id="type-template">
+    <li>
+        <span class="date"><span class="m" data-content="date"></span></span>
+        <h4><a href="#" data-content="titleText"></a></h4>
+        <p data-content="description"></p>
+    </li>
+</script>

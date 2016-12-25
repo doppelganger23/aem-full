@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:description="Template for content page"
+    jcr:primaryType="cq:Template"
+    jcr:title="sapustraining Content Page"
+    allowedPaths="[/content/sapustraining(/.*)?]"
+    ranking="{Long}100">
+    <jcr:content
+        jcr:primaryType="cq:PageContent"
+        sling:resourceType="sapustraining/components/structure/page-content">
+        <sap-navbar
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="sapustraining/components/structure/sap-navbar">
+            <sap-logo
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="sapustraining/components/content/sap-logo"
+                    logoLinkText="Developers"
+                    logoLinkUrl="#"/>
+            <sap-nav-list
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="sapustraining/components/content/sap-nav-list"/>
+        </sap-navbar>
+        <par
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="wcm/foundation/components/parsys">
+        </par>
+        <par2
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="wcm/foundation/components/parsys">
+        </par2>
+        <sap-footer
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="sapustraining/components/structure/sap-footer">
+            <par-f1
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="wcm/foundation/components/iparsys">
+            </par-f1>
+            <par-f2
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="wcm/foundation/components/iparsys">
+            </par-f2>
+        </sap-footer>
+    </jcr:content>
+</jcr:root>

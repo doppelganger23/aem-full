@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0"
+    jcr:primaryType="cq:Dialog"
+    title="Article with date widget"
+    xtype="dialog">
+    <items
+        jcr:primaryType="cq:Widget"
+        xtype="tabpanel">
+        <items jcr:primaryType="cq:WidgetCollection">
+            <tab1
+                jcr:primaryType="cq:Panel"
+                title="Properties">
+                <items jcr:primaryType="cq:WidgetCollection">
+                    <article-date
+                        jcr:primaryType="cq:Widget"
+                        fieldLabel="Article Date"
+                        name="./articleDate"
+                        xtype="datefield"
+                        defaultValue="now" />
+                    <article-title-text
+                        jcr:primaryType="cq:Widget"
+                        fieldLabel="Article Title Text"
+                        name="./articleTitleText"
+                        removeSingleParagraphContainer="true"
+                        xtype="richtext"/>
+                    <article-title-link
+                        jcr:primaryType="cq:Widget"
+                        fieldLabel="Article Title Link"
+                        name="./articleTitleLink"
+                        rootPath="/content/sapustraining"
+                        xtype="pathfield"/>
+                </items>
+            </tab1>
+            <tab2
+                jcr:primaryType="cq:Panel"
+                title="Description">
+                <items jcr:primaryType="cq:WidgetCollection">
+                    <article-description
+                        jcr:primaryType="cq:Widget"
+                        fieldLabel="Article Description"
+                        name="./articleDescription"
+                        xtype="richtext"/>
+                </items>
+            </tab2>
+        </items>
+    </items>
+</jcr:root>

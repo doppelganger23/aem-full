@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0"
+    jcr:primaryType="cq:Dialog"
+    title="Composite Link"
+    xtype="dialog">
+    <items
+        jcr:primaryType="cq:Widget"
+        xtype="tabpanel">
+        <items jcr:primaryType="cq:WidgetCollection">
+            <image-tab
+                    jcr:primaryType="cq:Widget"
+                    cropParameter="./image/imageCrop"
+                    ddGroups="[media]"
+                    fileNameParameter="./image/fileName"
+                    fileReferenceParameter="./image/fileReference"
+                    mapParameter="./image/imageMap"
+                    name="./image/file"
+                    requestSuffix="/image.img.png"
+                    rotateParameter="./image/imageRotate"
+                    sizeLimit="{Decimal}100"
+                    title="Image"
+                    xtype="html5smartimage">
+                <items jcr:primaryType="cq:WidgetCollection">
+                    <resType
+                            jcr:primaryType="cq:Widget"
+                            ignoreData="{Boolean}true"
+                            name="./image/sling:resourceType"
+                            value="foundation/components/image"
+                            xtype="hidden"/>
+                </items>
+            </image-tab>
+            <tab1
+                jcr:primaryType="cq:Panel"
+                title="Link">
+                <items jcr:primaryType="cq:WidgetCollection">
+                    <link-url
+                        jcr:primaryType="cq:Widget"
+                        fieldLabel="Link URL"
+                        name="./linkUrl"
+                        rootPath="/content/sapustraining"
+                        xtype="pathfield"/>
+                </items>
+            </tab1>
+            <tab3
+                jcr:primaryType="cq:Panel"
+                title="Text">
+                <items jcr:primaryType="cq:WidgetCollection">
+                    <link-header-text
+                        jcr:primaryType="cq:Widget"
+                        fieldLabel="Link Header Text"
+                        name="./linkHeaderText"
+                        removeSingleParagraphContainer="true"
+                        xtype="richtext"/>
+                    <paragraph-text
+                        jcr:primaryType="cq:Widget"
+                        fieldLabel="Paragraph Text"
+                        name="./paragraphText"
+                        xtype="richtext"/>
+                    <button-text
+                        jcr:primaryType="cq:Widget"
+                        fieldLabel="Button Text"
+                        name="./buttonText"
+                        xtype="textfield"/>
+                </items>
+            </tab3>
+        </items>
+    </items>
+</jcr:root>

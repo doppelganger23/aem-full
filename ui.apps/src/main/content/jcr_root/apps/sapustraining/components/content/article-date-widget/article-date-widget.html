@@ -1,0 +1,5 @@
+<sly data-sly-use.dateModel="com.epam.sapustraining.core.models.DateModel"/>
+
+<div class="date">${dateModel.date}</div>
+<h4><a href="${properties.articleTitleLink}">${properties.articleTitleText @ context="html"}</a></h4>
+<p>${properties.articleDescription || 'article' @ context="html"}</p>

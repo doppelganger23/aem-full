@@ -1,0 +1,21 @@
+<div id="mywrapper">
+    <div id="target">
+
+        <sly data-sly-use.layout="com.epam.sapustraining.core.models.event.clientside.EventLayoutModel"/>
+        <div id="topicLayout">
+            <div class="row event-listing" data-sly-list.column="${layout.columnsByTopic}">
+                <div class="span3">
+                    <h3>${column.columnName} <i class="icon-${'cloud'}"></i></h3>
+                    <ul class="icons" data-sly-list.event="${column.eventModels}">
+                        <li>
+                            <span class="date"><span class="m">${event.date @ context="html"}</span></span>
+                            <h4><a href="${event.titleLink}">${event.titleText @ context="html"}</a></h4>
+                            <p>${event.description || 'event' @ context="html"}</p>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>

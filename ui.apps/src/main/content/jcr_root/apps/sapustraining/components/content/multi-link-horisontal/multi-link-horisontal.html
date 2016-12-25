@@ -1,0 +1,7 @@
+<sly data-sly-use.section="com.epam.sapustraining.core.models.LinkSectionModel"></sly>
+
+
+<p data-sly-test="${section.isEmpty}">Add links here</p>
+<div class="inline" data-sly-list.link="${section.links}">
+    <span style="padding-right: 40px;"><strong data-sly-unwrap="${!properties.isBold}"><a href="${link.url}">${link.name}</a></strong></span>
+</div>

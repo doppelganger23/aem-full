@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0"
+    jcr:primaryType="cq:Dialog"
+    title="Event"
+    xtype="dialog">
+    <items
+        jcr:primaryType="cq:Widget"
+        xtype="tabpanel">
+        <items jcr:primaryType="cq:WidgetCollection">
+            <tab1
+                jcr:primaryType="cq:Panel"
+                title="Properties">
+                <items jcr:primaryType="cq:WidgetCollection">
+                    <event-date
+                        jcr:primaryType="cq:Widget"
+                        fieldLabel="Event Date"
+                        name="./eventDate"
+                        xtype="richtext"/>
+                    <event-title-text
+                        jcr:primaryType="cq:Widget"
+                        fieldLabel="Event Title Text"
+                        name="./eventTitleText"
+                        removeSingleParagraphContainer="true"
+                        xtype="richtext"/>
+                    <event-title-link
+                        jcr:primaryType="cq:Widget"
+                        fieldLabel="Event Title Link"
+                        name="./eventTitleLink"
+                        rootPath="/content/sapustraining"
+                        xtype="pathfield"/>
+                    <event-type
+                        jcr:primaryType="cq:Widget"
+                        fieldLabel="Event Type"
+                        name="./eventType"
+                        type="select"
+                        xtype="selection">
+                        <options jcr:primaryType="cq:WidgetCollection">
+                            <cloud
+                                jcr:primaryType="cq:Widget"
+                                text="cloud"
+                                value="cloud"/>
+                            <mobile-phone
+                                jcr:primaryType="cq:Widget"
+                                text="mobile-phone"
+                                value="mobile-phone"/>
+                            <tablet
+                                jcr:primaryType="cq:Widget"
+                                text="tablet"
+                                value="tablet"/>
+                            <calendar
+                                jcr:primaryType="cq:Widget"
+                                text="calendar"
+                                value="calendar"/>
+                            <desktop
+                                jcr:primaryType="cq:Widget"
+                                text="desktop"
+                                value="desktop"/>
+                            <laptop
+                                jcr:primaryType="cq:Widget"
+                                text="laptop"
+                                value="laptop"/>
+                        </options>
+                    </event-type>
+                </items>
+            </tab1>
+            <tab2
+                jcr:primaryType="cq:Panel"
+                title="Description">
+                <items jcr:primaryType="cq:WidgetCollection">
+                    <event-topic
+                        jcr:primaryType="cq:Widget"
+                        fieldLabel="Event Topic"
+                        name="./eventTopic"
+                        xtype="textfield"/>
+                    <event-description
+                        jcr:primaryType="cq:Widget"
+                        fieldLabel="Event Description"
+                        name="./eventDescription"
+                        xtype="richtext"/>
+                </items>
+            </tab2>
+        </items>
+    </items>
+</jcr:root>

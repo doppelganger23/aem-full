@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0"
+    jcr:primaryType="cq:Dialog"
+    title="Event position"
+    xtype="dialog">
+    <items
+        jcr:primaryType="cq:Widget"
+        xtype="tabpanel">
+        <items jcr:primaryType="cq:WidgetCollection">
+            <tab1
+                jcr:primaryType="cq:Panel"
+                title="Tab 1">
+                <items jcr:primaryType="cq:WidgetCollection">
+                    <column-types
+                        jcr:primaryType="cq:Widget"
+                        fieldLabel="Column Types"
+                        name="./columnTypes"
+                        xtype="multifield">
+                        <fieldConfig
+                            jcr:primaryType="cq:Widget"
+                            xtype="textfield"/>
+                    </column-types>
+                    <other-type-col-name
+                        jcr:primaryType="cq:Widget"
+                        fieldLabel="&quot;Other Type&quot; column name"
+                        name="./otherTypeColName"
+                        xtype="textfield"/>
+                    <column-topics
+                        jcr:primaryType="cq:Widget"
+                        fieldLabel="Column Topics"
+                        name="./columnTopics"
+                        xtype="multifield">
+                        <fieldConfig
+                            jcr:primaryType="cq:Widget"
+                            xtype="textfield"/>
+                    </column-topics>
+                    <other-topic-col-name
+                        jcr:primaryType="cq:Widget"
+                        fieldLabel="&quot;Other Topic&quot; column name"
+                        name="./otherTopicColName"
+                        xtype="textfield"/>
+                </items>
+            </tab1>
+        </items>
+    </items>
+</jcr:root>

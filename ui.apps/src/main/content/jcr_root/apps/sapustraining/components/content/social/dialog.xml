@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0"
+    jcr:primaryType="cq:Dialog"
+    title="Social"
+    xtype="dialog">
+    <items
+        jcr:primaryType="cq:Widget"
+        xtype="tabpanel">
+        <items jcr:primaryType="cq:WidgetCollection">
+            <tab1
+                jcr:primaryType="cq:Panel"
+                title="Tab 1">
+                <items jcr:primaryType="cq:WidgetCollection">
+                    <links
+                        jcr:primaryType="cq:Widget"
+                        fieldLabel="Links"
+                        name="./links"
+                        orderable="{Boolean}true"
+                        title="Links title"
+                        xtype="multifield">
+                        <fieldConfig
+                            jcr:primaryType="cq:Widget"
+                            border="true"
+                            layout="form"
+                            padding="10px"
+                            width="1000"
+                            xtype="multi-field-panel">
+                            <items jcr:primaryType="cq:WidgetCollection">
+                                <url
+                                    jcr:primaryType="cq:Widget"
+                                    fieldLabel="URL"
+                                    key="url"
+                                    xtype="textfield"/>
+                                <description
+                                    jcr:primaryType="cq:Widget"
+                                    fieldLabel="Description"
+                                    key="description"
+                                    xtype="textfield"/>
+                                <css-class
+                                    jcr:primaryType="cq:Widget"
+                                    fieldLabel="CSS class"
+                                    key="cssClass1"
+                                    type="select"
+                                    xtype="selection">
+                                    <options jcr:primaryType="cq:WidgetCollection">
+                                        <twitter
+                                            jcr:primaryType="cq:Widget"
+                                            text="Twitter"
+                                            value="twitter icon"/>
+                                        <facebook
+                                            jcr:primaryType="cq:Widget"
+                                            text="Facebook"
+                                            value="facebook icon"/>
+                                        <linkedin
+                                            jcr:primaryType="cq:Widget"
+                                            text="LinkedIn"
+                                            value="linkedin icon"/>
+                                        <youtube
+                                            jcr:primaryType="cq:Widget"
+                                            text="YouTube"
+                                            value="youtube icon"/>
+                                        <googleplus
+                                            jcr:primaryType="cq:Widget"
+                                            text="Google+"
+                                            value="googleplus icon"/>
+                                        <empty
+                                            jcr:primaryType="cq:Widget"
+                                            text="empty"
+                                            value=""/>
+                                    </options>
+                                </css-class>
+                                <cssclass
+                                    jcr:primaryType="cq:Widget"
+                                    fieldLabel="CSS class"
+                                    key="cssClass"
+                                    xtype="textfield"/>
+                            </items>
+                        </fieldConfig>
+                    </links>
+                </items>
+            </tab1>
+        </items>
+    </items>
+</jcr:root>

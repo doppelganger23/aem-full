@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0"
+    jcr:primaryType="cq:Dialog"
+    title="Background image block"
+    xtype="dialog">
+    <items
+        jcr:primaryType="cq:Widget"
+        xtype="tabpanel">
+        <items jcr:primaryType="cq:WidgetCollection">
+            <image-tab
+                jcr:primaryType="cq:Widget"
+                cropParameter="./image/imageCrop"
+                ddGroups="[media]"
+                fileNameParameter="./image/fileName"
+                fileReferenceParameter="./image/fileReference"
+                mapParameter="./image/imageMap"
+                name="./image/file"
+                requestSuffix="/image.img.png"
+                rotateParameter="./image/imageRotate"
+                sizeLimit="{Decimal}100"
+                title="Image"
+                xtype="html5smartimage">
+                <items jcr:primaryType="cq:WidgetCollection">
+                    <resType
+                        jcr:primaryType="cq:Widget"
+                        ignoreData="{Boolean}true"
+                        name="./image/sling:resourceType"
+                        value="foundation/components/image"
+                        xtype="hidden"/>
+                </items>
+            </image-tab>
+            <tab1
+                jcr:primaryType="cq:Panel"
+                title="Text">
+                <items jcr:primaryType="cq:WidgetCollection">
+                    <header-text
+                        jcr:primaryType="cq:Widget"
+                        fieldLabel="Header Text"
+                        name="./headerText"
+                        removeSingleParagraphContainer="{Boolean}true"
+                        xtype="richtext"/>
+                    <paragraph-text
+                        jcr:primaryType="cq:Widget"
+                        fieldLabel="Paragraph Text"
+                        name="./text"
+                        xtype="richtext"/>
+                </items>
+            </tab1>
+            <tab2
+                jcr:primaryType="cq:Panel"
+                title="Button">
+                <items jcr:primaryType="cq:WidgetCollection">
+                    <button-text
+                        jcr:primaryType="cq:Widget"
+                        fieldLabel="Button Text"
+                        name="./buttonText"
+                        xtype="textfield"/>
+                    <button-url
+                        jcr:primaryType="cq:Widget"
+                        fieldLabel="Button URL"
+                        name="./buttonUrl"
+                        rootPath="/content/sapustraining"
+                        xtype="pathfield"/>
+                    <hide-button
+                        jcr:primaryType="cq:Widget"
+                        fieldLabel="Hide button?"
+                        name="./hideButton"
+                        type="checkbox"
+                        xtype="selection"/>
+                </items>
+            </tab2>
+        </items>
+    </items>
+</jcr:root>

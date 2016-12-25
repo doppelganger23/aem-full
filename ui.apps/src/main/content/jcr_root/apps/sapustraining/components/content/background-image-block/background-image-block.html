@@ -1,0 +1,9 @@
+<div data-sly-resource="${'image' @ resourceType='wcm/foundation/components/image', wcmmode='disabled'}"></div>
+<div class="hero-unit">
+    <h1 class="test">${properties.headerText @ context="html"}</h1>
+    <p>${properties.text @ context="html"}</p>
+    <p data-sly-test="${!properties.hideButton}">
+        <a class="btn btn-primary" href="${properties.buttonUrl}" rel="external"><i class="icon-off icon-white"></i>
+            ${properties.buttonText}</a>
+    </p>
+</div>

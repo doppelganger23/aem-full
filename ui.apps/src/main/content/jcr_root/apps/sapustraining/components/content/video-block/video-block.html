@@ -1,0 +1,13 @@
+<div class="row-fluid video">
+    <div class="span4">
+        <h3 class="light">${properties.headerText @ context='html'}</h3>
+        <p>${properties.text @ context='html'}</p>
+        <sly>${properties.features @ context="html"}</sly>
+    </div>
+    <div class="span8">
+        <div class="video-container">
+            <iframe width="560" height="315" src="//${properties.url}" frameborder="0"
+                    allowfullscreen></iframe>
+        </div>
+    </div>
+</div>

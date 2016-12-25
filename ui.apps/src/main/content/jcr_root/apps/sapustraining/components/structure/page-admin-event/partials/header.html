@@ -1,0 +1,25 @@
+
+	<div class="navbar navbar-fixed-top navbar-inverse">
+      <div class="navbar-inner">
+        <div class="container">
+          <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="brand" href="index.php"><span class="sap">SAP</span> Developers</a>
+          <div class="nav-collapse collapse pull-right">
+            <ul class="nav">
+			  <li class="${currentPage.name == 'home' ? 'active' : ''}"><a href="${currentPage.path}">Home</a></li>
+              <li class="divider-vertical"></li>
+			  <li class="${currentPage.name == 'content' ? 'active' : ''}"><a href="${currentPage.path}">Database</a></li>
+              <li class="${currentPage.name == 'content' ? 'active' : ''}"><a href="${currentPage.path}">Cloud</a></li>
+              <li class="${currentPage.name == 'content' ? 'active' : ''}"><a href="${currentPage.path}">Mobile</a></li>
+              <li class="divider-vertical"></li>
+              <li class="${currentPage.name == 'event' ? 'active' : ''}"><a href="${currentPage.path}">Events</a></li>
+            </ul>
+          </div><!--/.nav-collapse -->
+        </div>
+        <iframe class="cover" src="about:blank"></iframe>
+      </div>
+    </div>

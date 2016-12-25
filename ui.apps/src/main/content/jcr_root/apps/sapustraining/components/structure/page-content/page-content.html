@@ -1,0 +1,17 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <sly data-sly-include="partials/head.html" data-sly-unwrap/>
+    <sly data-sly-include="partials/headlibs.html" data-sly-unwrap/>
+</head>
+<body class="page ${currentPage.template.name}" data-spy="scroll" data-target=".sidebar-toc">
+<sly data-sly-resource="sap-navbar"></sly>
+<sly data-sly-include="partials/main.html" data-sly-unwrap/>
+<sly data-sly-include="partials/footlibs.html" data-sly-unwrap/>
+<sly data-sly-resource="sap-footer"></sly>
+</body>
+</html>
+
+
+
+
